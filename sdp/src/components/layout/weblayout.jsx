@@ -1,15 +1,18 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-const weblayout = () => {
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+const WebLayout = () => {
   return (
-    <div>
-      <Navbar/>
-      <Outlet/>
-      <Footer/>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default weblayout
+export default WebLayout;

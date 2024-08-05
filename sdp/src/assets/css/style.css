@@ -67,9 +67,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground; 
   }
-}
-.active{
-  color: rgb(153, 138, 138);
 }

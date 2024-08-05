@@ -1,51 +1,93 @@
-import React from 'react'
-import {ModeToggle} from './toggle';
-import { NavLink } from 'react-router-dom'
+// import React from 'react';
+// import { Link, NavLink } from 'react-router-dom';
+// import { ModeToggle } from './toggle';
+
+// const Navbar = () => {
+//   const NavLinks = [
+//     {
+//       title: "Home",
+//       path: "/"
+//     },
+//     {
+//       title: "About Us",
+//       path: "/aboutus"
+//     },
+//     {
+//       title: "Login",
+//       path: "/login"
+//     },
+//     {
+//       title: "Register",
+//       path: "/register"
+//     }
+//   ];
+
+//   return (
+//     <div className="w-full h-[8vh] flex flex-row justify-center items-center shadow-sm shadow-primary/50 bg-indigo-500">
+//       <div className="w-1/4 h-full text-white font-bold flex justify-start items-center text-lg">TimeTablePro</div>
+//       <div className='w-2/4 h-full font-bold flex flex-row justify-end items-center gap-8 ml-8'>
+//         {
+//           NavLinks.map((links, index) => (
+//             <li key={index} className='list-none'>
+//               <NavLink to={links.path} className="text-white hover:text-indigo-200">
+//                 {links.title}
+//               </NavLink>
+//             </li>
+//           ))
+//         }
+//         <ModeToggle />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Navbar;
+
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { Calendar } from 'lucide-react';
+import { ModeToggle } from './toggle';
 
 const Navbar = () => {
+  const NavLinks = [
+    {
+      title: "Home",
+      path: "/"
+    },
+    {
+      title: "About Us",
+      path: "/aboutus"
+    },
+    {
+      title: "Login",
+      path: "/login"
+    },
+    {
+      title: "Register",
+      path: "/register"
+    }
+  ];
 
-    const LinksData = [
+  return (
+    <div className="w-full h-[8vh] flex flex-row justify-center items-center shadow-sm shadow-primary/50 bg-indigo-500">
+      <div className="w-1/4 h-full text-white font-bold flex justify-start items-center text-lg gap-2">
+        <Calendar size={24} />
+        TimeTablePro
+      </div>
+      <div className='w-2/4 h-full font-bold flex flex-row justify-end items-center gap-8 ml-8'>
         {
-            title: "Home",
-            link: '/'
-        },
-        {
-            title: "Login",
-            link: '/login'
-        },
-        {
-            title :"Schedule",
-            link :'/schedule'
-        },
-        {
-            title: "Register",
-            link: '/register'
+          NavLinks.map((links, index) => (
+            <li key={index} className='list-none'>
+              <NavLink to={links.path} className="text-white hover:text-indigo-200">
+                {links.title}
+              </NavLink>
+            </li>
+          ))
         }
-        
-    ]
-    return (
-        <div>
-            <div class="w-full h-[8vh]  flex flex-row justify-center items-center bg-primary/100">
-               
-                <div class='h-full w-1/4 flex flex-row justify-center items-center bg-primary/100 text-3x1 font-bold gap-10 text-white'>
-                    logo
-                </div>
-                <div class='h-full w-3/4 flex flex-row justify-center items-center bg-primary/100 gap-10 text-white'>
-                    {
-                        LinksData.map((data, index) => (
-                            <li key={index} className='list-none'>
-                                <NavLink to={data.link}>
-                                    {data.title}
-                                </NavLink>
-                            </li>
-                        ))
-                    }
-                    <ModeToggle />
-                </div>
-            </div>
+        <ModeToggle />
+      </div>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default Navbar
+export default Navbar;
